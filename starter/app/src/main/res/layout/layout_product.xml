@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="shoes"
+            type="com.udacity.shoestore.models.Shoes" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_background"
+        android:elevation="@dimen/minViewElevation"
+        android:layout_marginBottom="@dimen/midViewMargin"
+        android:layout_marginLeft="@dimen/minViewMargin"
+        android:layout_marginRight="@dimen/minViewMargin"
+        android:padding="@dimen/midViewPadding">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"/>
+
+        <TextView
+            android:id="@+id/productNameLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/LabelStyle"
+            android:text="@string/txt_shoes_name"
+            app:layout_constraintEnd_toEndOf="@id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/productName" />
+
+        <TextView
+            android:id="@+id/productName"
+            style="@style/ContentStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{shoes.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/productDetailLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_shoes_description"
+            style="@style/LabelStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@id/productDetail"/>
+
+        <TextView
+            android:id="@+id/productDetail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{shoes.description}"
+            style="@style/ContentStyle"
+            android:layout_marginTop="@dimen/minViewMargin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/productName" />
+
+        <TextView
+            android:id="@+id/productCompanyLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/LabelStyle"
+            android:text="@string/txt_company"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@id/productCompany" />
+
+        <TextView
+            android:id="@+id/productCompany"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{shoes.company}"
+            style="@style/ContentStyle"
+            android:layout_marginTop="@dimen/minViewMargin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/productDetail"/>
+
+        <TextView
+            android:id="@+id/productSizeLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/LabelStyle"
+            android:text="@string/txt_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@id/productSize" />
+
+        <TextView
+            android:id="@+id/productSize"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{shoes.toString()}"
+            style="@style/ContentStyle"
+            android:layout_marginTop="@dimen/minViewMargin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/productCompany"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

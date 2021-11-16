@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="midViewMargin">20dp</dimen>
+    <dimen name="minViewMargin">10dp</dimen>
+    <dimen name="midViewPadding">20dp</dimen>
+    <dimen name="minViewElevation">10dp</dimen>
+    <dimen name="minHeight">48dp</dimen>
+</resources>
