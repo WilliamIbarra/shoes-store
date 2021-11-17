@@ -17,7 +17,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_background"
         android:elevation="@dimen/minViewElevation"
-        android:layout_marginBottom="@dimen/midViewMargin"
+        android:layout_marginTop="@dimen/minViewMargin"
+        android:layout_marginBottom="@dimen/minViewMargin"
         android:layout_marginLeft="@dimen/minViewMargin"
         android:layout_marginRight="@dimen/minViewMargin"
         android:padding="@dimen/midViewPadding">
