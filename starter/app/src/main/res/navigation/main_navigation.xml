@@ -16,8 +16,14 @@
             app:destination="@id/onBoardingFragment"
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out"
+            app:launchSingleTop="true"
             app:popEnterAnim="@android:anim/fade_in"
-            app:popExitAnim="@android:anim/fade_out" />
+            app:popExitAnim="@android:anim/fade_out"
+            app:popUpTo="@id/nav_welcome"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 
     <fragment
@@ -27,7 +33,9 @@
         tools:layout="@layout/fragment_on_boarding">
         <action
             android:id="@+id/action_onBoardingFragment_to_onBoardingInstructionsFragment"
-            app:destination="@id/onBoardingInstructionsFragment" />
+            app:destination="@id/onBoardingInstructionsFragment"
+            app:popUpTo="@id/onBoardingFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 
 
@@ -38,7 +46,9 @@
         tools:layout="@layout/fragment_on_boarding_instructions">
         <action
             android:id="@+id/action_onBoardingInstructionsFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/onBoardingInstructionsFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 
 

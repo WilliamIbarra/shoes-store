@@ -11,51 +11,71 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:layout_margin="@dimen/midViewMargin"
         tools:context=".ui.welcome.main.productdetail.ProductDetailFragment">
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/productNameLyt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Shoes Name">
+            android:hint="@string/txt_name"
+            android:layout_marginBottom="@dimen/midViewMargin">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/productNameTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/productCompanyLyt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Company">
+            android:hint="@string/txt_company"
+            android:layout_marginBottom="@dimen/midViewMargin">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/productCompanyTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/productDetailLyt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Shoes Detail">
+            android:hint="@string/txt_detail"
+            android:layout_marginBottom="@dimen/midViewMargin">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/productDetailTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/productSizeLyt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Shoes Size">
+            android:hint="@string/txt_size"
+            android:layout_marginBottom="@dimen/midViewMargin">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/productSizeTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text" />
+                android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/saveProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_save"
+            android:layout_gravity="center"/>
 
     </LinearLayout>
 </layout>

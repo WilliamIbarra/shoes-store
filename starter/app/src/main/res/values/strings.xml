@@ -16,4 +16,12 @@
     <string name="txt_shoes_description">Description:</string>
     <string name="txt_company">Company:</string>
     <string name="txt_size">Size:</string>
+    <string name="txt_name">Shoes Name</string>
+    <string name="txt_detail">Shoes Detail</string>
+    <string name="txt_save">Save</string>
+    <string name="txt_enter_a_name">You must enter a name!</string>
+    <string name="txt_enter_a_company">You must enter a company!</string>
+    <string name="txt_enter_a_detail">You must enter a detail!</string>
+    <string name="txt_enter_a_size">You must enter a size!</string>
+    <string name="txt_logout">Logout</string>
 </resources>

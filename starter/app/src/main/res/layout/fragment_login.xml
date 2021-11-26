@@ -49,7 +49,7 @@
                 tools:ignore="SpeakableTextPresentCheck"
                 android:importantForAutofill="no" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/sig_in_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
                 android:text="@string/txt_sign_in"
                 android:textSize="14sp"/>
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/sign_up_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
