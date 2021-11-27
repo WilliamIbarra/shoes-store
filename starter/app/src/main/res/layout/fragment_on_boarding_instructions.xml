@@ -25,20 +25,24 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/txt_instructions" />
+            android:text="@string/txt_instructions"
+            style="@style/HeaderStyle"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/txt_instructions_text"
-            android:layout_marginTop="20dp" />
+            style="@style/ContentStyle"
+            android:layout_marginStart="@dimen/midViewMargin"
+            android:layout_marginEnd="@dimen/midViewMargin"
+            android:layout_marginTop="@dimen/midViewMargin" />
 
         <Button
             android:id="@+id/onBoardingInstructionsButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/txt_go_to_instructions"
-            android:layout_marginTop="20dp" />
+            android:text="@string/txt_go_home"
+            android:layout_marginTop="@dimen/midViewMargin" />
 
         </LinearLayout>
 

@@ -11,7 +11,7 @@
     <string name="txt_short_description">This is awesome, look at many types of shoes.</string>
     <string name="txt_go_to_instructions">Go to Instructions</string>
     <string name="txt_instructions">Instructions</string>
-    <string name="txt_instructions_text">Go to the list of shoes, then select one picture of them  for details.</string>
+    <string name="txt_instructions_text">Go to the list of shoes, then tap on add button to add  new shoes.</string>
     <string name="txt_shoes_name">Shoes Name:</string>
     <string name="txt_shoes_description">Description:</string>
     <string name="txt_company">Company:</string>
@@ -24,4 +24,5 @@
     <string name="txt_enter_a_detail">You must enter a detail!</string>
     <string name="txt_enter_a_size">You must enter a size!</string>
     <string name="txt_logout">Logout</string>
+    <string name="txt_go_home">Go to home</string>
 </resources>

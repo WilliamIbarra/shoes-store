@@ -29,4 +29,10 @@
         <item name="android:textSize">14sp</item>
     </style>
 
+    <style name="HeaderStyle">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
 </resources>
