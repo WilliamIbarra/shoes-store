@@ -45,7 +45,7 @@ class OnBoardingInstructionsFragment : Fragment() {
         mBinding.onBoardingInstructionsButton.setOnClickListener {
 
             findNavController().navigate(
-                OnBoardingInstructionsFragmentDirections.actionOnBoardingInstructionsFragmentToHomeFragment()
+                OnBoardingInstructionsFragmentDirections.actionOnBoardingInstructionsFragmentToHomeFragment(null)
             )
         }
     }

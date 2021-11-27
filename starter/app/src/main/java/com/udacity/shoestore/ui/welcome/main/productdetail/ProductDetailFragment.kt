@@ -18,14 +18,10 @@ import com.udacity.shoestore.models.Shoes
 class ProductDetailFragment : Fragment() {
 
     private lateinit var mBinding: FragmentProductDetailBinding
-    private lateinit var mViewModel: MainActivityViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        mViewModel = activity.run {
-            ViewModelProvider(this@ProductDetailFragment).get(MainActivityViewModel::class.java)
-        }
+    ): View {
 
         // Inflate view and obtain an instance of the binding class
         mBinding = DataBindingUtil.inflate(
@@ -53,17 +49,7 @@ class ProductDetailFragment : Fragment() {
     }
 
     private fun validateAndSave() {
-//
-//        if (mBinding.productNameTxt.text.isNullOrEmpty()) {
-//
-//            mBinding.productNameLyt.error = "You must enter a name!"
-//            mBinding.productNameLyt.requestFocus()
-//
-//            return
-//
-//        } else {
-//            mBinding.productNameLyt.error = null
-//        }
+
         if (!validate(mBinding.productNameLyt, getString(R.string.txt_enter_a_name))) return
 
         if(!validate(mBinding.productCompanyLyt, getString(R.string.txt_enter_a_company))) return
@@ -90,16 +76,17 @@ class ProductDetailFragment : Fragment() {
     }
 
     private fun save() {
-        mViewModel.saveProduct(
-            Shoes(
-                name = mBinding.productNameTxt.text.toString(),
-                company = mBinding.productCompanyTxt.text.toString(),
-                description = mBinding.productDetailTxt.text.toString(),
-                size = mBinding.productSizeTxt.text.toString().toInt()
-            )
 
+        val shoes =  Shoes(
+            name = mBinding.productNameTxt.text.toString(),
+            company = mBinding.productCompanyTxt.text.toString(),
+            description = mBinding.productDetailTxt.text.toString(),
+            size = mBinding.productSizeTxt.text.toString().toInt()
         )
-        findNavController().popBackStack()
+
+findNavController().navigate(
+    ProductDetailFragmentDirections.actionProductDetailFragmentToHomeFragment(shoes)
+)
     }
 
 

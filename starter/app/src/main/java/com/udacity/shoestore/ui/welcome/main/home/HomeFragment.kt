@@ -1,11 +1,13 @@
 package com.udacity.shoestore.ui.welcome.main.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
-import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.udacity.shoestore.MainActivityViewModel
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentHomeBinding
@@ -25,6 +27,12 @@ class HomeFragment : Fragment() {
 
         mViewModel = activity.run {
             ViewModelProvider(this@HomeFragment).get(MainActivityViewModel::class.java)
+        }
+        val args = HomeFragmentArgs.fromBundle(requireArguments())
+        val shoes = args.product
+
+        if(shoes != null) {
+            mViewModel.saveProduct(shoes)
         }
 
         // Inflate view and obtain an instance of the binding class
@@ -61,14 +69,16 @@ class HomeFragment : Fragment() {
 
             shoes.forEach{
                 addView(it)
+                Log.d("Listing",it.name)
             }
+            Log.d("Added","Observer running")
 
         })
     }
 
     private fun addView(shoes: Shoes) {
 
-        var newShoesBinding: LayoutProductBinding =
+        val newShoesBinding: LayoutProductBinding =
             DataBindingUtil.inflate(
                 requireActivity().layoutInflater,
                 R.layout.layout_product,

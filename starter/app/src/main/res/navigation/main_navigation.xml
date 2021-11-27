@@ -60,6 +60,10 @@
         <action
             android:id="@+id/action_homeFragment_to_productDetailFragment"
             app:destination="@id/productDetailFragment" />
+        <argument
+            android:name="Product"
+            app:argType="com.udacity.shoestore.models.Shoes"
+            app:nullable="true" />
     </fragment>
 
 
@@ -67,7 +71,13 @@
         android:id="@+id/productDetailFragment"
         android:name="com.udacity.shoestore.ui.welcome.main.productdetail.ProductDetailFragment"
         android:label="Product Detail"
-        tools:layout="@layout/fragment_product_detail"/>
+        tools:layout="@layout/fragment_product_detail">
+        <action
+            android:id="@+id/action_productDetailFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 
 
 </navigation>

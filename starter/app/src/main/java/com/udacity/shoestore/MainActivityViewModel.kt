@@ -1,5 +1,6 @@
 package com.udacity.shoestore
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -52,21 +53,19 @@ class MainActivityViewModel: ViewModel() {
     )
 
     // The list of shoes
-    private  val _shoesList = MutableLiveData<List<Shoes>>()
-    val shoesList: LiveData<List<Shoes>>
+    private  val _shoesList = MutableLiveData<MutableList<Shoes>>()
+    val shoesList: LiveData<MutableList<Shoes>>
     get() = _shoesList
 
 
     fun saveProduct(product: Shoes) {
-        listOfShoes.add(product)
-        _shoesList.postValue(listOfShoes)
+        _shoesList.value?.add(product)
     }
 
     init {
 
-        _shoesList.postValue(
-            listOfShoes
-        )
+
+        _shoesList.value = listOfShoes
 
        // _shoesByUser.postValue(null)
 
