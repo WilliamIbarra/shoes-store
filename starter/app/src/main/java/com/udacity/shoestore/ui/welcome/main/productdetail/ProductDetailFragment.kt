@@ -1,15 +1,13 @@
 package com.udacity.shoestore.ui.welcome.main.productdetail
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.textfield.TextInputLayout
-import com.udacity.shoestore.MainActivityViewModel
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentProductDetailBinding
 import com.udacity.shoestore.models.Shoes

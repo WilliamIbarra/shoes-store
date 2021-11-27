@@ -1,13 +1,11 @@
 package com.udacity.shoestore.ui.welcome.main.home
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.udacity.shoestore.MainActivityViewModel
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentHomeBinding
@@ -69,9 +67,7 @@ class HomeFragment : Fragment() {
 
             shoes.forEach{
                 addView(it)
-                Log.d("Listing",it.name)
             }
-            Log.d("Added","Observer running")
 
         })
     }
