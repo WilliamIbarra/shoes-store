@@ -113,7 +113,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun logout() {
-
+        activity?.finish()
     }
 
 }
