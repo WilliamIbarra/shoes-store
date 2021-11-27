@@ -13,6 +13,9 @@
         android:layout_height="match_parent"
         tools:context=".ui.welcome.main.home.HomeFragment">
 
+        <!--Use a linear layout
+        because only the list of items is displayed. -->
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">

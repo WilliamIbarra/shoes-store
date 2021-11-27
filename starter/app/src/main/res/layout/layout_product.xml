@@ -11,6 +11,12 @@
 
     </data>
 
+    <!--
+    Uses a constraint layout
+    because this layout is constrained by multiples views,
+    when a view is ending another is starting.
+    -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

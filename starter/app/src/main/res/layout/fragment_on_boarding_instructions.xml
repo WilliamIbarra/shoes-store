@@ -12,6 +12,9 @@
         android:layout_height="match_parent"
         tools:context=".ui.welcome.onboardingdetail.OnBoardingInstructionsFragment">
 
+        <!--Uses a linear layout
+            because this screen shows a simple design -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
