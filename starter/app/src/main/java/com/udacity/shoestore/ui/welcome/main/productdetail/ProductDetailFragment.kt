@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.textfield.TextInputLayout
 import com.udacity.shoestore.MainActivityViewModel
@@ -19,6 +20,8 @@ class ProductDetailFragment : Fragment() {
 
     private lateinit var mBinding: FragmentProductDetailBinding
     private lateinit var mViewModel: MainActivityViewModel
+
+    //private var newShoes : Shoes? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +42,8 @@ class ProductDetailFragment : Fragment() {
 
         mBinding.lifecycleOwner = this
 
+        mBinding.viewModel = mViewModel
+
         setOnClickListeners()
 
         // Inflate the layout for this fragment
@@ -49,7 +54,10 @@ class ProductDetailFragment : Fragment() {
 
         mBinding.saveProduct.setOnClickListener {
             // Save the new product detail
-            validateAndSave()
+            //newShoes?.let { shoes ->
+                validateAndSave()
+           // }
+
         }
 
     }
@@ -58,7 +66,7 @@ class ProductDetailFragment : Fragment() {
 
         if (!validate(mBinding.productNameLyt, getString(R.string.txt_enter_a_name))) return
 
-        if(!validate(mBinding.productCompanyLyt, getString(R.string.txt_enter_a_company))) return
+        if (!validate(mBinding.productCompanyLyt, getString(R.string.txt_enter_a_company))) return
 
         if (!validate(mBinding.productDetailLyt, getString(R.string.txt_enter_a_detail))) return
 
@@ -68,7 +76,7 @@ class ProductDetailFragment : Fragment() {
 
     }
 
-    private fun validate(lyt: TextInputLayout, error: String) : Boolean {
+    private fun validate(lyt: TextInputLayout, error: String): Boolean {
         return if (lyt.editText?.text.isNullOrEmpty()) {
 
             lyt.error = error
@@ -83,18 +91,18 @@ class ProductDetailFragment : Fragment() {
 
     private fun save() {
 
-        val shoes =  Shoes(
-            name = mBinding.productNameTxt.text.toString(),
-            company = mBinding.productCompanyTxt.text.toString(),
-            description = mBinding.productDetailTxt.text.toString(),
-            size = mBinding.productSizeTxt.text.toString().toInt()
+        mViewModel.saveProduct(
+            Shoes(
+                name = mViewModel.name,
+                company = mViewModel.company,
+                size = mViewModel.size,
+                description = mViewModel.description
+            )
         )
 
-        mViewModel.saveProduct(shoes)
+        mViewModel.cleanData()
 
-findNavController().navigate(
-    ProductDetailFragmentDirections.actionProductDetailFragmentToHomeFragment(shoes)
-)
+        findNavController().popBackStack()
     }
 
 

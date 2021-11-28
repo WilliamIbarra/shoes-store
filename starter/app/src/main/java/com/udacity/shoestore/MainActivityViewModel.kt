@@ -11,41 +11,45 @@ class MainActivityViewModel: ViewModel() {
     val shoes: LiveData<Shoes>
     get() = _shoes
 
+     var name: String = ""
+     var size: String = ""
+     var company: String = ""
+     var description: String = ""
 
     private var listOfShoes = mutableListOf(
     Shoes(
     "Nike Air Presto",
-    7,
+    "7",
     "Nike, Inc",
     "Awesome shoes designed by Nike."),
     Shoes(
     "Stan Smith Vulc Shoes",
-    9,
+    "9",
     "Adidas AG",
     "Awesome shoes designed by Adidas AG."),
     Shoes(
     "Curry Flow 8",
-    14,
+    "14",
     "Under Armour Inc",
     "Awesome shoes designed by Under Armour Inc."),
     Shoes(
     "Deviate NITRO",
-    8,
+    "8",
     "Puma SE",
     "Awesome shoes designed by Puma SE."),
     Shoes(
     "Bounder - Bearko",
-    14,
+    "14",
     "Skechers",
     "Awesome shoes designed by Skechers."),
     Shoes(
     "National Geographic Floatride Energy 3",
-    7,
+    "7",
     "Reebok",
     "Awesome shoes designed by Reebok."),
     Shoes(
     "Fresh Foam X 860v12",
-    9,
+    "9",
     "New Balance Athletics, Inc",
     "Awesome shoes designed by New Balance Athletics Inc.")
 
@@ -57,8 +61,17 @@ class MainActivityViewModel: ViewModel() {
     get() = _shoesList
 
 
-    fun saveProduct(product: Shoes) {
-        _shoesList.value?.add(product)
+    fun saveProduct(shoes: Shoes) {
+
+            _shoesList.value?.add(shoes)
+
+    }
+
+    fun cleanData(){
+        name = ""
+        company = ""
+        size = ""
+        description = ""
     }
 
     init {
