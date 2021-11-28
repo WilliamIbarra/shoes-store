@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.textfield.TextInputLayout
+import com.udacity.shoestore.MainActivityViewModel
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentProductDetailBinding
 import com.udacity.shoestore.models.Shoes
@@ -16,10 +18,16 @@ import com.udacity.shoestore.models.Shoes
 class ProductDetailFragment : Fragment() {
 
     private lateinit var mBinding: FragmentProductDetailBinding
+    private lateinit var mViewModel: MainActivityViewModel
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
+        mViewModel = activity.run {
+            ViewModelProvider(requireActivity()).get(MainActivityViewModel::class.java)
+        }
 
         // Inflate view and obtain an instance of the binding class
         mBinding = DataBindingUtil.inflate(
@@ -81,6 +89,8 @@ class ProductDetailFragment : Fragment() {
             description = mBinding.productDetailTxt.text.toString(),
             size = mBinding.productSizeTxt.text.toString().toInt()
         )
+
+        mViewModel.saveProduct(shoes)
 
 findNavController().navigate(
     ProductDetailFragmentDirections.actionProductDetailFragmentToHomeFragment(shoes)

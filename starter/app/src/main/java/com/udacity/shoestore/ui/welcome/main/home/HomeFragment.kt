@@ -24,13 +24,7 @@ class HomeFragment : Fragment() {
     ): View {
 
         mViewModel = activity.run {
-            ViewModelProvider(this@HomeFragment).get(MainActivityViewModel::class.java)
-        }
-        val args = HomeFragmentArgs.fromBundle(requireArguments())
-        val shoes = args.product
-
-        if(shoes != null) {
-            mViewModel.saveProduct(shoes)
+            ViewModelProvider(requireActivity()).get(MainActivityViewModel::class.java)
         }
 
         // Inflate view and obtain an instance of the binding class
