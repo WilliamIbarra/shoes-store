@@ -12,15 +12,15 @@
         android:layout_height="match_parent"
         tools:context=".ui.welcome.login.LoginFragment">
 
-        <!--Uses a linear layout
-            because this screen shows a simple design -->
+        <!-- Uses a linear layout because this screen shows a simple design,
+        the views are one next to another and the constraint are not necessary. -->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginStart="@dimen/midViewMargin"
+            android:layout_marginEnd="@dimen/midViewMargin"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent">
 

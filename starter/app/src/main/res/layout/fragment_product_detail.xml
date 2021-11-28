@@ -14,8 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <!--Uses a linear layout
-        because this screen shows a simple design -->
+    <!--Uses a linear layout because this screen shows a simple design,
+    the views are one next to the another and the constraints are not necessary. -->
 
     <LinearLayout
         android:layout_width="match_parent"
