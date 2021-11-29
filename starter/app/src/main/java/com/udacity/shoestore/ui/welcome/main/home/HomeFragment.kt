@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.MainActivityViewModel
 import com.udacity.shoestore.R
@@ -16,16 +16,18 @@ import com.udacity.shoestore.models.Shoes
 class HomeFragment : Fragment() {
 
     private lateinit var mBinding: FragmentHomeBinding
-    private lateinit var mViewModel: MainActivityViewModel
+
+    // Get a reference to the ViewModel scoped to its Activity
+    private val mViewModel by activityViewModels<MainActivityViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
 
-        mViewModel = activity.run {
-            ViewModelProvider(requireActivity()).get(MainActivityViewModel::class.java)
-        }
+//        mViewModel = activity.run {
+//            ViewModelProvider(requireActivity()).get(MainActivityViewModel::class.java)
+//        }
 
         // Inflate view and obtain an instance of the binding class
         mBinding = DataBindingUtil.inflate(
